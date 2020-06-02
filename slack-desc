@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.
+# Line up the first '|' above the ':' following the base package name, and
+# the '|' on the right side marks the last column you can put a character in.
+# You must make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':' except on otherwise blank lines.
+
+         |-----handy-ruler------------------------------------------------------|
+openresty: openresty (OpenResty is a full-fledged web platform) 
+openresty:
+openresty: by integrating the standard Nginx core, LuaJIT, many carefully 
+openresty: written Lua libraries, lots of high quality 3rd-party Nginx modules,
+openresty: and most of their external dependencies. It is designed to help 
+openresty: developers easily build scalable web applications, web services,
+openresty: and dynamic web gateways.
+openresty: 
+openresty:
+openresty: Homepage: https://www.openresty.org
+openresty:
