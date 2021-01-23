@@ -133,5 +133,11 @@ cat $CWD/rc.openresty > $PKG/etc/rc.d/rc.openresty.new
 mkdir -p $PKG/install
 cat $CWD/slack-desc > $PKG/install/slack-desc
 
+# Don't clobber config files
+for i in $(find $PKG/etc/$PRGNAM -type f ! -name "*\.default"); do
+  mv "$i" "$i".new
+done
+
+
 cd $PKG
 /sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-tgz}
