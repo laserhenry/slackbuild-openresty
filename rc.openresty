@@ -6,7 +6,7 @@
 
 BIN=/usr/local/openresty/sbin/nginx
 CONF=/usr/local/openresty/nginx/conf/nginx.conf
-PID=/var/run/nginx.pid
+PID=/usr/local/openresty/nginx/logs/nginx.pid
 
 openresty_start() {
   # Sanity checks.
