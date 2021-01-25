@@ -5,7 +5,7 @@
 # and copy from nginx startup script of Cherife Li <cherife-#-dotimes.com>.
 
 BIN=/usr/local/openresty/sbin/nginx
-CONF=/usr/local/openresty/conf/nginx.conf
+CONF=/usr/local/openresty/nginx/conf/nginx.conf
 PID=/var/run/nginx.pid
 
 openresty_start() {

@@ -69,7 +69,7 @@ find -L . \
  \( -perm 666 -o -perm 664 -o -perm 600 -o -perm 444 -o -perm 440 -o -perm 400 \) \
  -exec chmod 644 {} \;
 
-orprefix=/usr/local
+orprefix=/usr/local/openresty
 zlib_prefix=${orprefix}/zlib
 pcre_prefix=${orprefix}/pcre
 openssl_prefix=${orprefix}/openssl
@@ -115,7 +115,7 @@ make install DESTDIR=$PKG
 # Do not ship .la files
 find $PKG/usr/lib${LIBDIRSUFFIX} -name *.la -delete || true
 
-# we need debuginfo
+# we need debuginfo, so comment out below
 #find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
 #  | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
 
