@@ -4,7 +4,7 @@
 # Written for Slackware Linux by laserlist <laserlist#gmail.com>.
 # and copy from nginx startup script of Cherife Li <cherife-#-dotimes.com>.
 
-BIN=/usr/local/openresty/sbin/nginx
+BIN=/usr/local/openresty/nginx/sbin/nginx
 CONF=/usr/local/openresty/nginx/conf/nginx.conf
 PID=/usr/local/openresty/nginx/logs/nginx.pid
 
