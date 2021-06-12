@@ -4,9 +4,10 @@
 # Written for Slackware Linux by laserlist <laserlist#gmail.com>.
 # and copy from nginx startup script of Cherife Li <cherife-#-dotimes.com>.
 
-BIN=/usr/local/openresty/nginx/sbin/nginx
-CONF=/usr/local/openresty/nginx/conf/nginx.conf
-PID=/usr/local/openresty/nginx/logs/nginx.pid
+PREFIX=/usr/local/openresty/nginx
+BIN=$PREFIX/sbin/nginx
+CONF=$PREFIX/conf/nginx.conf
+PID=$PREFIX/logs/nginx.pid
 
 openresty_start() {
   # Sanity checks.
@@ -22,14 +23,14 @@ openresty_start() {
 
   echo "Starting Nginx server daemon..."
   if [ -x $BIN ]; then
-    $BIN -c $CONF
+    $BIN -p $PREFIX -c $CONF
   fi
 }
 
 openresty_test_conf() {
   echo "Checking configuration for correct syntax and"
   echo "then trying to open files referenced in configuration..."
-  $BIN -t -c $CONF
+  $BIN -p $PREFIX -t -c $CONF
 }
 
 openresty_term() {
@@ -44,7 +45,8 @@ openresty_stop() {
 
 openresty_reload() {
   echo "Reloading Nginx configuration..."
-  kill -HUP $(cat $PID)
+#  kill -HUP $(cat $PID)
+  $BIN -p $PREFIX -s reload -c $CONF
 }
 
 openresty_upgrade() {
