@@ -9,6 +9,7 @@ config() {
     rm $NEW
   fi
   # Otherwise, we leave the .new copy for the admin to consider...
+  mv $OLD $OLD.OLD
 }
 
 preserve_perms() {
@@ -22,14 +23,14 @@ preserve_perms() {
   config ${NEW}
 }
 
-preserve_perms etc/rc.d/rc.nginx.new
-config etc/logrotate.d/nginx.new
-config etc/nginx/fastcgi_params.new
-config etc/nginx/fastcgi.conf.new
-config etc/nginx/mime.types.new
-config etc/nginx/nginx.conf.new
-config etc/nginx/koi-utf.new
-config etc/nginx/koi-win.new
-config etc/nginx/scgi_params.new
-config etc/nginx/uwsgi_params.new
-config etc/nginx/win-utf.new
+preserve_perms etc/rc.d/rc.openresty.new
+config etc/logrotate.d/openresty.new
+config usr/local/openresty/nginx/conf/fastcgi_params.new
+config usr/local/openresty/nginx/conf/fastcgi.conf.new
+config usr/local/openresty/nginx/conf/mime.types.new
+config usr/local/openresty/nginx/conf/nginx.conf.new
+config usr/local/openresty/nginx/conf/koi-utf.new
+config usr/local/openresty/nginx/conf/koi-win.new
+config usr/local/openresty/nginx/conf/scgi_params.new
+config usr/local/openresty/nginx/conf/uwsgi_params.new
+config usr/local/openresty/nginx/conf/win-utf.new
