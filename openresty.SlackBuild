@@ -106,7 +106,7 @@ CXXFLAGS="$SLKCFLAGS" \
     --with-http_gunzip_module \
     --with-threads \
     --with-compat \
-    --add-dynamic-module=~/slackbuilds/ModSecurity-nginx \
+    --add-dynamic-module=/tmp/ModSecurity-nginx \
     --with-luajit-xcflags='-DLUAJIT_NUMMODE=2 -DLUAJIT_ENABLE_LUA52COMPAT' \
   --build=$ARCH-slackware-linux
 
