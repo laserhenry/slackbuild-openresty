@@ -24,7 +24,7 @@
 
 PRGNAM=openresty
 VERSION=${VERSION:-1.19.3.2}
-BUILD=${BUILD:-7}
+BUILD=${BUILD:-8}
 TAG=${TAG:-_SBo}
 
 if [ -z "$ARCH" ]; then
@@ -106,6 +106,7 @@ CXXFLAGS="$SLKCFLAGS" \
     --with-http_gunzip_module \
     --with-threads \
     --with-compat \
+    --add-dynamic-module=~/slackbuilds/ModSecurity-nginx \
     --with-luajit-xcflags='-DLUAJIT_NUMMODE=2 -DLUAJIT_ENABLE_LUA52COMPAT' \
   --build=$ARCH-slackware-linux
 
