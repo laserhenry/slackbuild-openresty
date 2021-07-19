@@ -24,7 +24,7 @@
 
 PRGNAM=openresty
 VERSION=${VERSION:-1.19.3.2}
-BUILD=${BUILD:-8}
+BUILD=${BUILD:-9}
 TAG=${TAG:-_SBo}
 
 if [ -z "$ARCH" ]; then
@@ -56,6 +56,13 @@ fi
 
 set -e
 
+
+#
+# let's put modsecurity-nginx to /tmp
+#
+cd $OUTPUT
+git clone https://github.com/SpiderLabs/ModSecurity-nginx
+
 rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
@@ -69,10 +76,12 @@ find -L . \
  \( -perm 666 -o -perm 664 -o -perm 600 -o -perm 444 -o -perm 440 -o -perm 400 \) \
  -exec chmod 644 {} \;
 
+
 orprefix=/usr/local/openresty
 zlib_prefix=${orprefix}/zlib
 pcre_prefix=${orprefix}/pcre
 openssl_prefix=${orprefix}/openssl
+
 
 CFLAGS="$SLKCFLAGS" \
 CXXFLAGS="$SLKCFLAGS" \
